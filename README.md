@@ -16,9 +16,7 @@ Flutter is a cross-platform UI framework by Google for building apps. Codespaces
 
 ### Getting started
 
-1. Press "Use this template" towards the top right of this repository and create a new repository from this template.
-
-    > There's also an option to open this repository in Codespaces and publish it to GitHub later from there, but I recommend creating your own repository first.
+1. Fork this repository.
 
 2. In your new repository, press "Code", select "Codespaces", then press "Create codespace on main". A container with everything you need to get started will be created automatically, then you'll be taken to your new codespace (VS Code in your browser). If you'd prefer to work on your codespace using the VS Code desktop app instead of the browser app, you can follow these instructions.
 
