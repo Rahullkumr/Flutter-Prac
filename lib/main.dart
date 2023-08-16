@@ -99,12 +99,12 @@ class PracticeState extends State<Practice> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: display,
+        backgroundColor: currentBgColor,
         child: const Icon(
           Icons.refresh,
           color: Colors.white,
           size: 40,
         ),
-        backgroundColor: currentBgColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
