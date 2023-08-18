@@ -13,8 +13,8 @@ void main() {
         ),
         body: const Center(
           child: Image(
-            // acts as an empty frame of any real world photo
-            image: NetworkImage('https://picsum.photos/id/28/300'),
+            // acts as an empty frame where an image will be kept
+            image: AssetImage('images/diamond.png'),
           ),
         ),
       ),

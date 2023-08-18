@@ -1,7 +1,10 @@
 # use Image inside the Scaffold:
 
-1. NetworkImage(): from the internet 
-2. AssetImage(): from the asset folder 
+1. NetworkImage('imageLink'): from the internet 
+2. AssetImage('images/imageName'): 
+  - first you need to uncomment the assets folder in pubspec.yaml 
+  - then, `flutter pub get` will automatically run(if not, run it manually)
+  - add `AssetImage('images/imageName.extension')` to your code
 
 
 
