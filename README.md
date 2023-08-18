@@ -1,3 +1,13 @@
+# use Image inside the Scaffold:
+
+1. NetworkImage(): from the internet 
+2. AssetImage(): from the asset folder 
+
+
+
+
+---
+
 # Flutter on Codespaces ❤
 
 This is a repository for developing with [Flutter](https://flutter.dev/) on the web on [GitHub Codespaces](https://github.com/features/codespaces).
