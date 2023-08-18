@@ -7,11 +7,15 @@
   - then, `flutter pub get` will automatically run(if not, run it manually)
   - add `AssetImage('images/imageName.extension')` to your code
 
-3. Custom app icon
+# Custom app icon
+1. for Android devices
   - goto `https://www.appicon.co/` and download your icon
   - go inside android/app/src/main/res/
   - replace all `mipmap` folders with downloaded ones
-  - similarly do for iphones
+2. For ios devices
+  - goto `https://www.appicon.co/` and download your icon
+  - go inside ios/Runner/
+  - replace `Assets.xcassets`` folder with downloaded one
 
 
 
