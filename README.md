@@ -15,7 +15,7 @@
 2. For ios devices
   - goto `https://www.appicon.co/` and download your icon
   - go inside ios/Runner/
-  - replace `Assets.xcassets`` folder with downloaded one
+  - replace `Assets.xcassets` folder with downloaded one
 
 
 
