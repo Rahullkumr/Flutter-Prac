@@ -1,12 +1,17 @@
 # use Image inside the Scaffold:
 
-1. NetworkImage('imageLink'): from the internet 
+1. NetworkImage ('imageLink'): from the internet 
 
-2. AssetImage('images/imageName'): 
+2. AssetImage ('images/imageName'): 
   - first you need to uncomment the assets folder in pubspec.yaml 
   - then, `flutter pub get` will automatically run(if not, run it manually)
   - add `AssetImage('images/imageName.extension')` to your code
 
+3. Custom app icon
+  - goto `https://www.appicon.co/` and download your icon
+  - go inside android/app/src/main/res/
+  - replace all `mipmap` folders with downloaded ones
+  - similarly do for iphones
 
 
 

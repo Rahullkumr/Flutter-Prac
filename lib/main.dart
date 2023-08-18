@@ -9,7 +9,6 @@ void main() {
           title: const Center(  
             child: Text("I Am Rich"),
           ),
-          backgroundColor: Colors.grey[900],
         ),
         body: const Center(
           child: Image(
