@@ -1,22 +1,8 @@
-# use Image inside the Scaffold:
+# Flutter 
 
-1. NetworkImage ('imageLink'): from the internet 
-
-2. AssetImage ('images/imageName'): 
-  - first you need to uncomment the assets folder in pubspec.yaml 
-  - then, `flutter pub get` will automatically run(if not, run it manually)
-  - add `AssetImage('images/imageName.extension')` to your code
-
-# Custom app icon
-1. for Android devices
-  - goto `https://www.appicon.co/` and download your icon
-  - go inside android/app/src/main/res/
-  - replace all `mipmap` folders with downloaded ones
-2. For ios devices
-  - goto `https://www.appicon.co/` and download your icon
-  - go inside ios/Runner/
-  - replace `Assets.xcassets` folder with downloaded one
-
+## Device on which codespace is running is:
+- run the following command - `flutter devices`
+- Linux (desktop) . linux . linux-x64 . Debian GNU/Linux 11 (bullseye) 5.15.0-1041-azure
 
 
 ---
