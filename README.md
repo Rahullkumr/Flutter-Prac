@@ -8,7 +8,16 @@
 
 use `SafeArea` widget
 
+### space between Containers 
+- use `SizedBox()` widget
 
+### stretch container to fill entire available space
+
+1. use `crossAxisAlignment.stretch`
+
+2. using height/width 
+- height: double.infinity (for Column Widget)
+- width: double.infinity (for Row Widget)
 
 ---
 
