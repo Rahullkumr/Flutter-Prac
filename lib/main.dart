@@ -13,33 +13,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                color: Colors.lightBlue,
-                height: 100.0,
-                width: double.infinity,
-                child: const Text("container 1"),
+                color: Colors.red,
+                // height: 120.0,
+                width: 100,
               ),
-              const SizedBox(
-                height: 30.0,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    color: Colors.yellow,
+                    height: 100,
+                    width: 100,
+                  ),
+                  Container(
+                    color: const Color.fromARGB(82, 255, 235, 59),
+                    height: 100,
+                    width: 100,
+                  )
+                ],
               ),
               Container(
-                color: Colors.lightGreen,
-                height: 100.0,
-                width: 300.0,
-                child: const Text("container 2"),
+                color: Colors.blue,
+                // height: 70.0,
+                width: 100,
               ),
-              Container(
-                color: Colors.indigoAccent,
-                height: 100.0,
-                width: 200.0,
-                child: const Text("container 3"),
-              )
             ],
           ),
         ),
