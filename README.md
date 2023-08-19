@@ -4,7 +4,8 @@
 - run the following command - `flutter devices`
 - Linux (desktop) . linux . linux-x64 . Debian GNU/Linux 11 (bullseye) 5.15.0-1041-azure
 
-### To keep the content in the safe area, i.e the area other than the place where icons like - signal, wifi, notification, notch, etc live.
+### To keep the content in the safe area
+> safe area: the area other than the place where icons like - signal, wifi, notification, notch, etc live.
 
 use `SafeArea` widget
 
@@ -16,8 +17,8 @@ use `SafeArea` widget
 1. use `crossAxisAlignment.stretch`
 
 2. using height/width 
-- height: double.infinity (for Column Widget)
-- width: double.infinity (for Row Widget)
+- `height: double.infinity` (for Column Widget)
+- `width: double.infinity` (for Row Widget)
 
 ---
 
