@@ -1,6 +1,7 @@
 {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "GitHub.copilot",
+    "editor.defaultFormatter": "Dart-Code.flutter",
     "editor.formatOnPaste": true,
-    "dart.enableSdkFormatter": true
+    "dart.enableSdkFormatter": true,
+    "editor.guides.bracketPairs": "active"
 }
