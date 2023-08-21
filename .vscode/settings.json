@@ -1,0 +1,6 @@
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "GitHub.copilot",
+    "editor.formatOnPaste": true,
+    "dart.enableSdkFormatter": true
+}
