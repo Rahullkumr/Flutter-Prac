@@ -21,23 +21,11 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 color: Colors.red,
-                // height: 120.0,
                 width: 100,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    color: Colors.yellow,
-                    height: 100,
-                    width: 100,
-                  ),
-                  Container(
-                    color: const Color.fromARGB(82, 255, 235, 59),
-                    height: 100,
-                    width: 100,
-                  )
-                ],
+              const CircleAvatar(
+                radius: 100.0,
+                backgroundColor: Colors.yellow,
               ),
               Container(
                 color: Colors.blue,
