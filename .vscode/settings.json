@@ -1,7 +1,10 @@
 {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "Dart-Code.flutter",
+    "editor.defaultFormatter": "Dart-Code.dart-code",
     "editor.formatOnPaste": true,
     "dart.enableSdkFormatter": true,
-    "editor.guides.bracketPairs": "active"
+    "editor.guides.bracketPairs": "active",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
