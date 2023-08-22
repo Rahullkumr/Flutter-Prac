@@ -20,4 +20,44 @@ use `SafeArea` widget
 - `height: double.infinity` (for Column Widget)
 - `width: double.infinity` (for Row Widget)
 
+
+### Learnt CircleAvatar widget
+```
+CircleAvatar(
+    radius: 50,
+    backgroundImage: AssetImage('images/me.png'),
+),
+```
+
+### Styling ```Text``` widget using style property
+```
+Text(
+    "Rahul Kumar",
+    style: TextStyle(
+        fontSize: 40,
+        fontWeight: FontWeight.bold,
+    ),
+)
+```
+#### Adding custom fonts
+
+1. Download the font and paste inside 'fonts' folder in the app's root directory
+
+2. Uncomment `font area` in pubspec.yaml file and edit family name and other related properties, like this
+```
+fonts:
+    - family: Filxgirl
+      fonts:
+        - asset: fonts/Filxgirl.ttf
+```
+3. Use the font where needed, like this:
+```
+style: TextStyle(
+    fontFamily: 'Filxgirl',
+    fontSize: 40,
+    color: Colors.white,
+)
+```
+
+4. Re-run the app
 ---
