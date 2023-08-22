@@ -13,15 +13,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.brown,
         body: SafeArea(
-          child: Center(
-            child: CircleAvatar(
-              radius: 100,
-              child: Image(
-                image: AssetImage('images/pro.png'),
+          child: Column(
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/me.png'),
               ),
-            ),
+              Text(
+                "Rahul Kumar",
+                style: TextStyle(
+                  fontFamily: 'Filxgirl',
+                  fontSize: 40,
+                  color: Colors.white,
+                ),
+                ),
+            ],
           ),
         ),
       ),
