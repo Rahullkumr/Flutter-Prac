@@ -15,9 +15,13 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: CircleAvatar(
-            backgroundColor: Colors.yellow,
-            radius: 100,
+          child: Center(
+            child: CircleAvatar(
+              radius: 100,
+              child: Image(
+                image: AssetImage('images/pro.png'),
+              ),
+            ),
           ),
         ),
       ),
