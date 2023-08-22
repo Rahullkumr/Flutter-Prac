@@ -56,6 +56,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: Ysabeau
+      fonts:
+        - asset: fonts/Ysabeau-Regular.ttf
     - family: Filxgirl
       fonts:
         - asset: fonts/Filxgirl.ttf
