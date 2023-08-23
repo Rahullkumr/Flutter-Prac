@@ -4,15 +4,15 @@
 - run the following command - `flutter devices`
 - Linux (desktop) . linux . linux-x64 . Debian GNU/Linux 11 (bullseye) 5.15.0-1041-azure
 
-### To keep the content in the safe area
+### 1. To keep the content in the safe area
 > safe area: the area other than the place where icons like - signal, wifi, notification, notch, etc live.
 
 use `SafeArea` widget
 
-### space between Containers 
+### 2. space between Containers 
 - use `SizedBox()` widget
 
-### stretch container to fill entire available space
+### 3. stretch container to fill entire available space
 
 1. use `crossAxisAlignment.stretch`
 
@@ -21,7 +21,7 @@ use `SafeArea` widget
 - `width: double.infinity` (for Row Widget)
 
 
-### Learnt CircleAvatar widget
+### 4. Learnt CircleAvatar widget
 ```
 CircleAvatar(
     radius: 50,
@@ -29,7 +29,7 @@ CircleAvatar(
 ),
 ```
 
-### Styling ```Text``` widget using style property
+### 5. Styling ```Text``` widget using style property
 ```
 Text(
     "Rahul Kumar",
@@ -39,7 +39,7 @@ Text(
     ),
 )
 ```
-#### Adding custom fonts
+### 6. Adding custom fonts
 
 1. Download the font and paste inside 'fonts' folder in the app's root directory
 
@@ -61,7 +61,7 @@ style: TextStyle(
 
 4. Re-run the app
 
-### Why to use `Icon` widget instead of normal `Image` widget for icons?
+### 7. Why to use `Icon` widget instead of normal `Image` widget for icons?
 
 - `Icon widget` uses a vector graphic, which is a mathematical representation of an image, so it can be rendered more quickly and resized without losing quality. 
 
