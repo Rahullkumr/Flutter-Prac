@@ -68,4 +68,13 @@ style: TextStyle(
 - `Image widget` is rasterized, which means that it is converted to a pixel-based image when it is rendered, so it will become pixelated if it is resized too much
 
 - `Icon widget` allows you to change the color, size, and other properties of the icon. The Image widget only allows you to change the size of the image.
+
+### Use Icon widget like this:
+```
+Icon(
+    Icons.email,
+    size: 20,
+    color: Colors.black,
+)
+```
 ---
