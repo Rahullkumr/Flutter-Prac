@@ -41,12 +41,15 @@ class MyApp extends StatelessWidget {
                     letterSpacing: 3,
                   ),
                 ),
-                Container(height: 10,),
                 Container(
                   height: 1,
                   width: 150,
+                  margin: const EdgeInsets.only(
+                    top: 10,
+                  ),
                   color: Colors.white,
-                )
+                ),
+                
               ],
             ),
           ),
