@@ -77,4 +77,9 @@ Icon(
     color: Colors.black,
 )
 ```
+### 8. `Container` vs `Card` widget
+
+- card is like a container widget but it has rounded corners and shadow along with few more properties  
+
+
 ---
