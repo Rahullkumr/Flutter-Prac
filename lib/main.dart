@@ -54,7 +54,6 @@ class MyApp extends StatelessWidget {
                   vertical: 10,
                   horizontal: 25,
                 ),
-                // padding: const EdgeInsets.all(7),
                 child: ListTile(
                   leading: Icon(
                     Icons.phone,
