@@ -51,59 +51,46 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 const Card(
-                  shadowColor: Colors.red,
                   elevation: 7,
                   color: Colors.white,
-                  margin:  EdgeInsets.symmetric(
+                  margin: EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 25,
                   ),
                   // padding: const EdgeInsets.all(7),
-                  child:  Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.phone,
-                          size: 20,
-                          color: Colors.black,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          '+91 9798295265',
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ],
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      size: 20,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      '+91 9798295265',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ),
                 const Card(
                   elevation: 7,
-                  shadowColor: Colors.red,
                   margin: EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 25,
                   ),
                   color: Colors.white,
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.email,
-                        size: 20,
-                        color: Colors.black,
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.email,
+                      size: 20,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      'rahulbkba@gmail.com',
+                      style: TextStyle(
+                        fontSize: 20,
                       ),
-                      SizedBox(width: 10),
-                      Text(
-                        'rahulbkba@gmail.com',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ],

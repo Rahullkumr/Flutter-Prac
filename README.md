@@ -94,4 +94,19 @@ Padding(
     )
 )
 ```
+
+### 10. `ListTile()` with Card() widget
+
+- use ListTile() instead of Row() in Card() widget
+
+```
+ListTile(
+    leading: Icon(
+        Icons.phone,
+    ),
+    title: Text(
+        'Rahul',
+    )
+)
+```
 ---
