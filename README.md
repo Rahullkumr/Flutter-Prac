@@ -81,5 +81,17 @@ Icon(
 
 - card is like a container widget but it has rounded corners and shadow along with few more properties  
 
+### 9. `Padding()` Widget
 
+- used to give padding to those widgets that don't have padding property like Row(), Column(), Card(), etc
+```
+Padding(
+    padding: EdgeInsets.all(20.0),
+    child: Row(
+        children: [
+            Text("Padding widget example"),
+        ]
+    )
+)
+```
 ---
