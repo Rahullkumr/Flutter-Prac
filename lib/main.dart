@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           body: Center(
             child: Card(
-              child: Text('Hello world'),
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text('Hello world'),
+              ),
             ),
           ),
         ),
