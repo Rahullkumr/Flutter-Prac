@@ -11,9 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Center(
-        child: Text('Hello world'),
+    return const SafeArea(
+      child: MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Card(
+              child: Text('Hello world'),
+            ),
+          ),
+        ),
       ),
     );
   }
