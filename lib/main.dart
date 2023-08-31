@@ -7,17 +7,65 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: Container( 
-          color: Colors.grey,
-          margin: const EdgeInsets.all(20),
-          padding: const EdgeInsets.all(20),
-          child: const Text(
-            'Hello world',
-            style: TextStyle(color: Colors.white,
-            fontSize: 30,),
+    return SafeArea(
+      child: MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Let's explore Container's 6 properties"),
+          ),
+          backgroundColor: Colors.black,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.red,
+                    child: const Text(''),
+                  ),
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.pink,
+                    child: const Text(''),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.yellow,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.teal,
+                  ),
+                  Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.purple,
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
