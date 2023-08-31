@@ -111,4 +111,7 @@ ListTile(
 ```
 
 ### 11. `Divider()` = `<hr>`
+
+### 12. Decoration properties of Container Widget
+![]('images/decoration.jpg')
 ---
