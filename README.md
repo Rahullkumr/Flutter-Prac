@@ -113,5 +113,6 @@ ListTile(
 ### 11. `Divider()` = `<hr>`
 
 ### 12. Decoration properties of Container Widget
-![]('images/decoration.jpg')
+
+![]("https://github.com/Rahullkumr/Flutter-Prac/blob/main/images/decoration.jpg")
 ---
