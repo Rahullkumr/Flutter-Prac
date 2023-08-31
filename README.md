@@ -114,5 +114,6 @@ ListTile(
 
 ### 12. Decoration properties of Container Widget
 
-![]("https://github.com/Rahullkumr/Flutter-Prac/blob/main/images/decoration.jpg")
+<img alt="decoration image" src="https://github.com/Rahullkumr/Flutter-Prac/blob/main/images/decoration.jpg"></img>
+
 ---
