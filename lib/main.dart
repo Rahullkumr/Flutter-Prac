@@ -76,8 +76,22 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 200,
                     height: 200,
-                    color: Colors.yellow,
-                    child: const Text('4'),
+                    decoration: const BoxDecoration(
+                      color: Colors.yellow,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.green,
+                          offset: Offset(0, 10),                        
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Text(
+                        '4. With shadow',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
                   ),
                 ],
               ),
