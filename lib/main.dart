@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text("Container's decoration's 6 properties"),
+            title: const Text("Container's decoration properties"),
           ),
           backgroundColor: Colors.black,
           body: Column(
@@ -81,14 +81,14 @@ class MyApp extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.green,
-                          offset: Offset(0, 10),                        
+                          offset: Offset(0, 10),
                           blurRadius: 10,
                         ),
                       ],
                     ),
                     child: const Center(
                       child: Text(
-                        '4. With shadow',
+                        '4. With shadow\n\ndecoration: const BoxDecoration(\ncolor: Colors.yellow,\nboxShadow: [\nBoxShadow(\ncolor: Colors.green,\noffset: Offset(0, 10),\nblurRadius: 10,\n),\n],\n)',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -101,14 +101,33 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 200,
                     height: 200,
-                    color: Colors.teal,
-                    child: const Text('5'),
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.red, Colors.green],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: const Text(
+                      '5. With a gradient background\n\ndecoration: const BoxDecoration(\ngradient: LinearGradient(\ncolors: [Colors.red, Colors.green],\nbegin: Alignment.topLeft,\nend: Alignment.bottomRight,\n),\n)',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   Container(
                     width: 200,
                     height: 200,
-                    color: Colors.purple,
-                    child: const Text('6'),
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/me.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: const Text(
+                      "6. With an image\n\ndecoration: const BoxDecoration(\nimage: DecorationImage(\nimage: AssetImage('images/me.png'),\nfit: BoxFit.cover,\n),\n)",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ],
               ),
