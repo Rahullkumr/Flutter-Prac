@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text("Let's explore Container's 6 properties"),
+            title: const Text("Container's decoration's 6 properties"),
           ),
           backgroundColor: Colors.black,
           body: Column(
@@ -24,14 +24,35 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 200,
                     height: 200,
-                    color: Colors.red,
-                    child: const Text(''),
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                    ),
+                    child: const Center(
+                      child: Text(
+                        '1. A solid color background\n\n\ndecoration: const BoxDecoration(\n\tcolor: Colors.red,\n)',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
                   Container(
                     width: 200,
                     height: 200,
-                    color: Colors.pink,
-                    child: const Text(''),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.indigo,
+                        width: 5.0,
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        '2. With border\n\n\n decoration: BoxDecoration( \n\tborder: Border.all(\n\t\tcolor: Colors.indigo,\n\t\twidth: 5.0,\n\t),\n)',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -41,12 +62,22 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 200,
                     height: 200,
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        '3. With rounded border\n\n\ndecoration: BoxDecoration(\n\tborderRadius: BorderRadius.circular(20),\n)',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                   Container(
                     width: 200,
                     height: 200,
                     color: Colors.yellow,
+                    child: const Text('4'),
                   ),
                 ],
               ),
@@ -57,11 +88,13 @@ class MyApp extends StatelessWidget {
                     width: 200,
                     height: 200,
                     color: Colors.teal,
+                    child: const Text('5'),
                   ),
                   Container(
                     width: 200,
                     height: 200,
                     color: Colors.purple,
+                    child: const Text('6'),
                   ),
                 ],
               ),
