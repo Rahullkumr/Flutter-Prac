@@ -1,7 +1,5 @@
 <h1 align=center>Flutter on Codespaces ❤</h1>
 
-[Online Assessement System](https://onlineasystem.000webhostapp.com/)
-
 ## Device on which codespace is running is:
 - run the following command - `flutter devices`
 - Linux (desktop) . linux . linux-x64 . Debian GNU/Linux 11 (bullseye) 5.15.0-1041-azure
@@ -118,4 +116,11 @@ ListTile(
 
 <img alt="decoration image" src="https://github.com/Rahullkumr/Flutter-Prac/blob/main/images/decoration.jpg"></img>
 
+--
+### 13. Expanded() widget
+- it adjusts it's child a/c to the screen size.
+- it's `flex` property will divide the children into ratio
+
+### 14. Other way of using AssetImage()
+`Image.asset('images/name.png')`
 ---
