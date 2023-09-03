@@ -125,6 +125,6 @@ ListTile(
 `Image.asset('images/name.png')`
 
 
-### 15. FlatButton is replaced with TextButton()
+### 15. FlatButton is replaced with TextButton() and RaisedButton with ElevatedButton()
 
 ---
