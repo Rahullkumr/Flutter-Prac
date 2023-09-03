@@ -124,7 +124,47 @@ ListTile(
 ### 14. Other way of using AssetImage()
 `Image.asset('images/name.png')`
 
+### 15. Deprecated widgets
 
-### 15. FlatButton is replaced with TextButton() and RaisedButton with ElevatedButton()
+- FlatButton => TextButton()
+- RaisedButton => ElevatedButton()
+
+## Different ways to make circle in flutter
+
+1. using `CircleAvatar()` widget
+```
+CircleAvatar(
+    radius: 50,
+    child: Text('My Avatar'),
+)
+```
+
+2. using `borderRadius:` property of Container widget
+```
+Container(
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+    ),
+)
+```
+
+3.  Using `shape: BoxShape.circle` property 
+
+```
+Container(
+  decoration: BoxDecoration(
+    shape: BoxShape.circle,
+  ),
+)
+```
+
+4. Using the `CustomPaint` widget
+```
+CustomPaint(
+  painter: CirclePainter(),
+)
+```
+
+
 
 ---
