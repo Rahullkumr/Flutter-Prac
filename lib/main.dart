@@ -1,66 +1,40 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  return runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: const Text('Dicee'),
+          backgroundColor: Colors.red,
+        ),
+        body: const DicePage(),
+      ),
+    ),
+  );
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class DicePage extends StatelessWidget {
+  const DicePage({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.blue[900],
-                  ),
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.blue[900],
-                  ),
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.blue[900],
-                  ),
-                  const SizedBox(),
-                ],
-              ),
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: TextButton(
+              onPressed: () {},
+              child: Image.asset('images/dice1.png'),
             ),
-            Container(
-              height: 130,
-              decoration: BoxDecoration(
-                color: Colors.blue[900],
-              ),
+          ),
+          Expanded(
+            child: TextButton(
+              onPressed: () {},
+              child: Image.asset('images/dice2.png'),
             ),
-            Container(
-              height: 130,
-              decoration: BoxDecoration(
-                color: Colors.blue[900],
-              ),
-            ),
-            Container(
-              height: 130,
-              decoration: BoxDecoration(
-                color: Colors.blue[900],
-              ),
-            ),
-            Container(
-              height: 130,
-              decoration: BoxDecoration(
-                color: Colors.blue[900],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
