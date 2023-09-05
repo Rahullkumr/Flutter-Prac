@@ -19,19 +19,20 @@ class DicePage extends StatelessWidget {
   const DicePage({super.key});
   @override
   Widget build(BuildContext context) {
+    int diceNumber = 1;
     return Center(
       child: Row(
         children: [
           Expanded(
             child: TextButton(
               onPressed: () {},
-              child: Image.asset('images/dice1.png'),
+              child: Image.asset('images/dice$diceNumber.png'),
             ),
           ),
           Expanded(
             child: TextButton(
               onPressed: () {},
-              child: Image.asset('images/dice2.png'),
+              child: Image.asset('images/dice$diceNumber.png'),
             ),
           ),
         ],
