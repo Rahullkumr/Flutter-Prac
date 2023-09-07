@@ -158,7 +158,7 @@ Container(
 )
 ```
 
-4. Using the `CustomPaint` widget
+4. Using the `CustomPaint` 
 ```
 CustomPaint(
   painter: CirclePainter(),
