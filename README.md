@@ -164,7 +164,6 @@ CustomPaint(
   painter: CirclePainter(),
 )
 ```
-5. 
-
+## Let's build Stateful Apps
 
 ---
