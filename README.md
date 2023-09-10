@@ -116,7 +116,8 @@ ListTile(
 
 <img alt="decoration image" src="https://github.com/Rahullkumr/Flutter-Prac/blob/main/images/decoration.jpg"></img>
 
---
+---
+
 ### 13. Expanded() widget
 - it adjusts it's child a/c to the screen size.
 - it's `flex` property will divide the children into ratio
