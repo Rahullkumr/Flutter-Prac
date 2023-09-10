@@ -166,4 +166,16 @@ CustomPaint(
 ```
 ## Let's build Stateful Apps
 
+- whatever will change, is coded inside the `State` part of the stateful widget
+
+- State part tracks and updates the screen as the state changes 
+
+- `setState((){})` marks certain things dirty
+> for eg: leftDice is getting changed inside setState(), so setState() will mark every part, wherever leftDice is used, as DIRTY
+
+- `setState((){})` triggers/calls the build method and tells it that state has changed
+
+- whenever hot reload is done, the `build()` method is called and it re-builds only those parts that are marked as DIRTY
+
+- `Hot reload` is a feature of Flutter that allows to see the changes in code without having to rebuild the app. When a change is made to a `stateful widget`, the `dirty` flag will be set and the `build()` method will be called. This will cause the widget to be rebuilt and the changes will be reflected in the app.
 ---
