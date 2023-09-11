@@ -1,47 +1,50 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-void main() => runApp(const MyApp());
+void main() => runApp(
+      const MaterialApp(
+        home: BallPage(),
+      ),
+    );
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BallPage extends StatelessWidget {
+  const BallPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: MaterialApp(
-        home: Scaffold(
-          backgroundColor: Colors.blue,
-          appBar: AppBar(
-            backgroundColor: Colors.indigo,
-            title: const Text('Ask Me Anything'),
-            centerTitle: true,
-          ),
-          body: const BallPage(),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        backgroundColor: Colors.blue[900],
+        title: const Text('Ask Me Anything'),
+        centerTitle: true,
       ),
+      body: const Ball(),
     );
   }
 }
 
-class BallPage extends StatefulWidget {
-  const BallPage({super.key});
+class Ball extends StatefulWidget {
+  const Ball({super.key});
 
   @override
-  State<BallPage> createState() => _BallPageState();
+  State<Ball> createState() => _BallState();
 }
 
-class _BallPageState extends State<BallPage> {
-  int no = 1;
+class _BallState extends State<Ball> {
+  int ballNumber = 1;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Expanded(
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Center(
         child: TextButton(
           onPressed: () {
-            no = Random().nextInt(5) + 1;
+            setState(() {
+              ballNumber = Random().nextInt(5) + 1;
+            });
           },
-          child: Image.asset('images/ball$no.png'),
+          child: Image.asset('images/ball$ballNumber.png'),
         ),
       ),
     );
