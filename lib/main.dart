@@ -1,51 +1,74 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
-void main() => runApp(
-      const MaterialApp(
-        home: BallPage(),
-      ),
-    );
+void main() => runApp(const MaterialApp(
+      home: MyApp(),
+    ));
 
-class BallPage extends StatelessWidget {
-  const BallPage({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
-        title: const Text('Ask Me Anything'),
+        title: const Text('Counter'),
         centerTitle: true,
       ),
-      body: const Ball(),
+      body: const Counter(),
     );
   }
 }
 
-class Ball extends StatefulWidget {
-  const Ball({super.key});
+class Counter extends StatefulWidget {
+  const Counter({super.key});
 
   @override
-  State<Ball> createState() => _BallState();
+  State<Counter> createState() => _CounterState();
 }
 
-class _BallState extends State<Ball> {
-  int ballNumber = 1;
+class _CounterState extends State<Counter> {
+  int num = 1;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Center(
-        child: TextButton(
-          onPressed: () {
-            setState(() {
-              ballNumber = Random().nextInt(5) + 1;
-            });
-          },
-          child: Image.asset('images/ball$ballNumber.png'),
-        ),
+    return Center(
+      child: Column(
+        children: [
+          Card(
+            margin: const EdgeInsets.all(60),
+            elevation: 20,
+            shadowColor: Colors.amber,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text(
+                '$num',
+                style: const TextStyle(
+                  fontSize: 40,
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                num = num + 1;
+              });
+            },            
+            child: const Text('Increase'),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  num = num - 1;
+                });
+              },
+              child: const Text('Decrease'),
+            ),
+          )
+        ],
       ),
     );
   }
