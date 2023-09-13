@@ -1,74 +1,493 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
-      home: MyApp(),
-    ));
+void main() => runApp(const Calculator());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Calculator extends StatefulWidget {
+  const Calculator({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Counter'),
-        centerTitle: true,
-      ),
-      body: const Counter(),
-    );
+  State<Calculator> createState() => _CalculatorState();
+}
+
+class _CalculatorState extends State<Calculator> {
+  var firstNum = 0;
+  var secondNum = 0;
+  String history = '';
+  String textToDisplay = '';
+  String res = '';
+  String operation = '';
+
+  void btnOnClick(String btnVal) {
+    if (btnVal == 'C') {
+      textToDisplay = '';
+      firstNum = 0;
+      secondNum = 0;
+      res = '';
+    } else if (btnVal == 'AC') {
+      textToDisplay = '';
+      firstNum = 0;
+      secondNum = 0;
+      res = '';
+      history = '';
+    } else if (btnVal == '+/-') {
+      if (textToDisplay[0] != '-') {
+        res = '-$textToDisplay';
+      } else {
+        res = textToDisplay.substring(1);
+      }
+    } else if (btnVal == '<') {
+      res = textToDisplay.substring(0, textToDisplay.length - 1);
+    } else if (btnVal == '+' ||
+        btnVal == '-' ||
+        btnVal == 'X' ||
+        btnVal == '/') {
+      firstNum = int.parse(textToDisplay);
+      res = '';
+      operation = btnVal;
+    } else if (btnVal == '=') {
+      secondNum = int.parse(textToDisplay);
+      if (operation == '+') {
+        res = (firstNum + secondNum).toString();
+        history =
+            firstNum.toString() + operation.toString() + secondNum.toString();
+      }
+      if (operation == '-') {
+        res = (firstNum - secondNum).toString();
+        history =
+            firstNum.toString() + operation.toString() + secondNum.toString();
+      }
+      if (operation == 'X') {
+        res = (firstNum * secondNum).toString();
+        history =
+            firstNum.toString() + operation.toString() + secondNum.toString();
+      }
+      if (operation == '/') {
+        res = (firstNum / secondNum).toString();
+        history =
+            firstNum.toString() + operation.toString() + secondNum.toString();
+      }
+    } else {
+      res = int.parse(textToDisplay + btnVal).toString();
+    }
+    setState(() {
+      textToDisplay = res;
+    });
   }
-}
 
-class Counter extends StatefulWidget {
-  const Counter({super.key});
-
-  @override
-  State<Counter> createState() => _CounterState();
-}
-
-class _CounterState extends State<Counter> {
-  int num = 1;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Card(
-            margin: const EdgeInsets.all(60),
-            elevation: 20,
-            shadowColor: Colors.amber,
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Text(
-                '$num',
-                style: const TextStyle(
-                  fontSize: 40,
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: MaterialApp(
+        title: 'Calculator',
+        home: Scaffold(
+          backgroundColor: Colors.black,
+          appBar: AppBar(
+            title: const Text('Task1 : Calculator'),
+            centerTitle: true,
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 150,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 20,
+                  ),
+                  child: Card(
+                    color: Colors.black,
+                    elevation: 15,
+                    shadowColor: Colors.grey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                history,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                textToDisplay,
+                                style: const TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('AC');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          'AC',
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('C');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          'C',
+                          style: TextStyle(
+                            fontSize: 27,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('<');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          '<',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('/');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          '/',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('7');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '7',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('8');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '8',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('9');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '9',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('X');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          'X',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('4');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '4',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('5');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '5',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('6');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '6',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('-');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          '-',
+                          style: TextStyle(
+                            fontSize: 50,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('1');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '1',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('2');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '2',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('3');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '3',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('+');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.orange,
+                        radius: 38,
+                        child: Text(
+                          '+',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('+/-');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '+/-',
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('0');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '0',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('.');
+                      },
+                      child: const CircleAvatar(
+                        radius: 38,
+                        child: Text(
+                          '.',
+                          style: TextStyle(
+                            fontSize: 40,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        btnOnClick('=');
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 38,
+                        child: Text(
+                          '=',
+                          style: TextStyle(
+                            fontSize: 30,
+                            // color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                num = num + 1;
-              });
-            },            
-            child: const Text('Increase'),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  num = num - 1;
-                });
-              },
-              child: const Text('Decrease'),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }
