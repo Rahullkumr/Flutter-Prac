@@ -16,6 +16,7 @@ class _CalculatorState extends State<Calculator> {
   String textToDisplay = '';
   String res = '';
   String operation = '';
+  String useless = '';
 
   void btnOnClick(String btnVal) {
     if (btnVal == 'C') {
@@ -32,11 +33,14 @@ class _CalculatorState extends State<Calculator> {
     } else if (btnVal == '+/-') {
       if (textToDisplay[0] != '-') {
         res = '-$textToDisplay';
+        history = res;
       } else {
         res = textToDisplay.substring(1);
+        history = res;
       }
     } else if (btnVal == '<') {
       res = textToDisplay.substring(0, textToDisplay.length - 1);
+      history = res;
     } else if (btnVal == '+' ||
         btnVal == '-' ||
         btnVal == 'X' ||
@@ -44,6 +48,7 @@ class _CalculatorState extends State<Calculator> {
       firstNum = int.parse(textToDisplay);
       res = '';
       operation = btnVal;
+      history = firstNum.toString() + operation.toString();
     } else if (btnVal == '=') {
       secondNum = int.parse(textToDisplay);
       if (operation == '+') {
@@ -68,6 +73,16 @@ class _CalculatorState extends State<Calculator> {
       }
     } else {
       res = int.parse(textToDisplay + btnVal).toString();
+      useless = (int.parse(res) % 10).toString();
+      if (history.contains('+') ||
+          history.contains('-') ||
+          history.contains('X') ||
+          history.contains('/')) {
+        history += useless;
+      } else {
+        history = int.parse(textToDisplay + btnVal).toString();
+      }
+      useless = '';
     }
     setState(() {
       textToDisplay = res;
@@ -453,14 +468,14 @@ class _CalculatorState extends State<Calculator> {
                     ),
                     TextButton(
                       onPressed: () {
-                        btnOnClick('.');
+                        btnOnClick('00');
                       },
                       child: const CircleAvatar(
                         radius: 38,
                         child: Text(
-                          '.',
+                          '00',
                           style: TextStyle(
-                            fontSize: 40,
+                            fontSize: 30,
                             color: Colors.white,
                           ),
                         ),
