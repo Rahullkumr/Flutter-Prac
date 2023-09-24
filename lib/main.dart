@@ -29,9 +29,9 @@ class UserInterface extends StatefulWidget {
 }
 
 class _UserInterfaceState extends State<UserInterface> {
-  String cel = '';
-  String fah = '';
-  String kel = '';
+  String cel = 'he';
+  String fah = 'he';
+  String kel = 'he';
 
   @override
   Widget build(BuildContext context) {
@@ -99,9 +99,7 @@ class _UserInterfaceState extends State<UserInterface> {
               ),
               title: TextField(
                 onChanged: (value) {
-                  setState(() {
-                    kel = value;
-                  });
+                  kel = value;
                 },
               ),
             ),
@@ -118,8 +116,21 @@ class _UserInterfaceState extends State<UserInterface> {
             ),
           ),
         ),
-        Card(
-          child: Text(kel),
+        const Row(
+          children: [
+            Card(
+              color: Colors.red,
+              child: Text('hello'),
+            ),
+            Card(
+              color: Colors.orange,
+              child: Text('hello'),
+            ),
+            Card(
+              color: Colors.blue,
+              child: Text('hello'),
+            ),
+          ],
         ),
       ],
     );
