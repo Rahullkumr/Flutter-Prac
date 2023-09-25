@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Temperature Converter'),
+            title: const Text('Task2: Temperature Converter'),
             centerTitle: true,
           ),
           body: const UserInterface(),
@@ -29,21 +29,21 @@ class UserInterface extends StatefulWidget {
 }
 
 class _UserInterfaceState extends State<UserInterface> {
-  String cel = 'he';
-  String fah = 'he';
-  String kel = 'he';
+  String cel = '0';
+  String fah = '0';
+  String kel = '0';
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.fromLTRB(10, 40, 10, 30),
           child: Text(
             'Input temperature (any one)',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -57,6 +57,7 @@ class _UserInterfaceState extends State<UserInterface> {
                 'Celsius',
                 style: TextStyle(
                   color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
               title: TextField(
@@ -76,6 +77,7 @@ class _UserInterfaceState extends State<UserInterface> {
                 'Fahrenheit',
                 style: TextStyle(
                   color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
               title: TextField(
@@ -95,6 +97,7 @@ class _UserInterfaceState extends State<UserInterface> {
                 'Kelvin',
                 style: TextStyle(
                   color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
               title: TextField(
@@ -109,26 +112,98 @@ class _UserInterfaceState extends State<UserInterface> {
           padding: const EdgeInsets.all(20.0),
           child: ElevatedButton(
             onPressed: () {},
-            // ignore: prefer_const_constructors
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: const Text("convert"),
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Text(
+                "convert",
+                style: TextStyle(
+                  fontSize: 17,
+                ),
+              ),
             ),
           ),
         ),
-        const Row(
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Card(
-              color: Colors.red,
-              child: Text('hello'),
+              color: Colors.cyan,
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text(
+                      'Celsius',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+                    child: Text(
+                      cel,
+                      style: const TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Card(
-              color: Colors.orange,
-              child: Text('hello'),
+              color: Colors.cyan,
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text(
+                      'Fahrenheit',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+                    child: Text(
+                      fah,
+                      style: const TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Card(
-              color: Colors.blue,
-              child: Text('hello'),
+              color: Colors.cyan,
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text(
+                      'Kelvin',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+                    child: Text(
+                      kel,
+                      style: const TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
