@@ -94,10 +94,16 @@ class _UserInterfaceState extends State<UserInterface> {
                   fontSize: 20,
                 ),
               ),
-              title: TextField(
-                onChanged: (value) {
-                  cel = value;
-                },
+              title: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                ),
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  onChanged: (value) {
+                    cel = value;
+                  },
+                ),
               ),
             ),
           ),
@@ -114,10 +120,16 @@ class _UserInterfaceState extends State<UserInterface> {
                   fontSize: 20,
                 ),
               ),
-              title: TextField(
-                onChanged: (value) {
-                  fah = value;
-                },
+              title: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                ),
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  onChanged: (value) {
+                    fah = value;
+                  },
+                ),
               ),
             ),
           ),
@@ -134,10 +146,16 @@ class _UserInterfaceState extends State<UserInterface> {
                   fontSize: 20,
                 ),
               ),
-              title: TextField(
-                onChanged: (value) {
-                  kel = value;
-                },
+              title: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 60,
+                ),
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  onChanged: (value) {
+                    kel = value;
+                  },
+                ),
               ),
             ),
           ),
