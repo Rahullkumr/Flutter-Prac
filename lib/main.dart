@@ -29,9 +29,43 @@ class UserInterface extends StatefulWidget {
 }
 
 class _UserInterfaceState extends State<UserInterface> {
-  String cel = '0';
-  String fah = '0';
-  String kel = '0';
+  String cel = '';
+  String fah = '';
+  String kel = '';
+  double displayCel = 0, displayFah = 0, displayKel = 0;
+
+  void convert(String cel, String fah, String kel) {
+    if (cel != '') {
+      setState(() {
+        displayCel = double.parse(cel);
+        displayFah = 1.8 * displayCel + 32;
+        displayKel = displayCel + 273.15;
+        // let's roundoff to two decimal places
+        displayFah = double.parse((displayFah).toStringAsFixed(2));
+        displayKel = double.parse((displayKel).toStringAsFixed(2));
+      });
+    }
+    if (fah != '') {
+      setState(() {
+        displayFah = double.parse(fah);
+        displayCel = 0.56 * (displayFah - 32);
+        displayKel = 0.56 * displayFah + 255;
+        // let's roundoff to two decimal places
+        displayCel = double.parse((displayCel).toStringAsFixed(2));
+        displayKel = double.parse((displayKel).toStringAsFixed(2));
+      });
+    }
+    if (kel != '') {
+      setState(() {
+        displayKel = double.parse(kel);
+        displayCel = displayKel - 273.15;
+        displayFah = 1.8 * displayKel - 459.67;
+        // let's roundoff to two decimal places
+        displayCel = double.parse((displayCel).toStringAsFixed(2));
+        displayFah = double.parse((displayFah).toStringAsFixed(2));
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +145,9 @@ class _UserInterfaceState extends State<UserInterface> {
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              convert(cel, fah, kel);
+            },
             child: const Padding(
               padding: EdgeInsets.all(15.0),
               child: Text(
@@ -144,7 +180,7 @@ class _UserInterfaceState extends State<UserInterface> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
                     child: Text(
-                      cel,
+                      '$displayCel',
                       style: const TextStyle(
                         fontSize: 30,
                       ),
@@ -170,7 +206,7 @@ class _UserInterfaceState extends State<UserInterface> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
                     child: Text(
-                      fah,
+                      '$displayFah',
                       style: const TextStyle(
                         fontSize: 30,
                       ),
@@ -196,7 +232,7 @@ class _UserInterfaceState extends State<UserInterface> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
                     child: Text(
-                      kel,
+                      '$displayKel',
                       style: const TextStyle(
                         fontSize: 30,
                       ),
