@@ -180,3 +180,7 @@ CustomPaint(
 
 - `Hot reload` is a feature of Flutter that allows to see the changes in code without having to rebuild the app. When a change is made to a `stateful widget`, the `dirty` flag will be set and the `build()` method will be called. This will cause the widget to be rebuilt and the changes will be reflected in the app.
 ---
+
+# Quiz App
+
+- add Icons/widgets in a List of Icon-generic and display when a button pressed, i.e dynamic widget creation
