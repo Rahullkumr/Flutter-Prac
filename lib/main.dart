@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'question.dart';
-import 'dart:developer';
+import 'quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(const Quizzler());
 
@@ -39,20 +40,27 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scorekeeper = [];
 
-  // List<String> questions = [
-  // 'You can lead a cow down stairs but not up stairs.'
-  //   'Approximately one quarter of human bones are in the feet.',
-  //   'A slug\'s blood is green.'
-  // ];
-  // List<bool> answers = [false, true, true];
-
-  int qNo = 0;
-
-  List<Question> questionBank = [
-    Question(q: 'You can lead a cow down stairs but not up stairs.', a: false),
-    Question(q: 'Approximately one quarter of human bones are in the feet.',a: true),
-    Question(q: 'A slug\'s blood is green.', a: true),
-  ];
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAns = quizBrain.getQuestionAnswer();
+    if (userPickedAnswer == correctAns) {
+      scorekeeper.add(
+        const Icon(
+          Icons.check,
+          color: Colors.green,
+        ),
+      );
+    } else {
+      scorekeeper.add(
+        const Icon(
+          Icons.close,
+          color: Colors.red,
+        ),
+      );
+    }
+    setState(() {
+      quizBrain.nextQuestion();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +74,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionBank[qNo].questionText,
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 25.0,
@@ -92,19 +100,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                bool correctAns = questionBank[qNo].questionAnswer;
-                if (correctAns == true) {
-                  log("correct");
-                } else {
-                  log("false");
-                }
-                setState(() {
-                  if (qNo == 3) {
-                    qNo = 0;
-                  } else {
-                    qNo++;
-                  }
-                });
+                checkAnswer(true);
               },
             ),
           ),
@@ -126,19 +122,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
-                bool correctAns = questionBank[qNo].questionAnswer;
-                if (correctAns == false) {
-                  log("correct");
-                } else {
-                  log("false");
-                }
-                setState(() {
-                  if (qNo == 3) {
-                    qNo = 0;
-                  } else {
-                    qNo++;
-                  }
-                });
+                checkAnswer(false);
               },
             ),
           ),
@@ -150,9 +134,3 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
-
-/*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
-*/
